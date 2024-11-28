@@ -21,84 +21,83 @@ export default function Home() {
   return (
     <div className="relative min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 flex items-center justify-between p-2 bg-white dark:bg-gray-900 shadow-md z-10">
-        {/* Top-left logo and title */}
-        <div className="flex items-center space-x-2">
-          <Link href="/" aria-label="Homepage">
-            <Image
-              src="/client/images/image.png"
-              alt="FlashFlorte logo"
-              width={30}
-              height={30}
-              priority
-            />
-          </Link>
-          <h1 className="text-3xl font-extrabold tracking-tight sm: text-xl">
-            Callia Innovations
-          </h1>
-        </div>
-        {/* Hamburger menu for mobile */}
-        <div className="md:hidden flex items-center space-x-4">
-          <button
-            className="text-gray-900 dark:text-gray-100 focus:outline-none"
-            aria-label="Toggle Menu"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
-          </button>
-          {/* Mode Toggle for mobile */}
-          <ModeToggle />
-        </div>
-        {/* Mobile menu */}
-        {menuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-20 md:hidden">
-            <a href="#home" className="block px-4 py-2 text-lg font-semibold">
-              Home
-            </a>
-            <a href="#what" className="block px-4 py-2 text-lg font-semibold">
-              About Us
-            </a>
-            <a href="#features" className="block px-4 py-2 text-lg font-semibold">
-              Features
-            </a>
-       
-          </div>
-        )}
-        {/* Tab Navigation for desktop */}
-        <div className="hidden md:flex space-x-20">
-          <a href="#home" className="text-lg font-semibold">
-            Home
-          </a>
-          <a href="#what" className="text-lg font-semibold">
-            About Us
-          </a>
-          <a href="#features" className="text-lg font-semibold">
-            Features
-          </a>
-        </div>
-        {/* Top-right controls for desktop */}
-        <div className="hidden md:flex items-center space-x-4">
-          <ModeToggle />
-          <a href="#signup">
-          <Button>Get Started</Button>
-          </a>
-    
-  
-        </div>
-      </nav>
+  <nav className="fixed top-0 left-0 right-0 flex items-center justify-between p-1 bg-white dark:bg-gray-900 shadow-md z-10">
+    {/* Top-left logo and title */}
+    <div className="flex items-center space-x-2">
+    <div className="flex justify-center items-center">
+        <Link href="/" aria-label="Homepage">
+          <Image
+            src="/logo.png"
+            alt="FlashFlorte logo"
+            width={50}   // Logo width
+            height={50}  // Logo height
+            priority
+          />
+        </Link>
+      </div>
+      <h1 className="text-6xl font-extrabold tracking-tight sm:text-xl">
+        Callia Innovations  {/* Reduced title font size */}
+      </h1>
+    </div>
+    {/* Hamburger menu for mobile */}
+    <div className="md:hidden flex items-center space-x-4">
+      <button
+        className="text-gray-900 dark:text-gray-100 focus:outline-none"
+        aria-label="Toggle Menu"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          />
+        </svg>
+      </button>
+      {/* Mode Toggle for mobile */}
+      <ModeToggle />
+    </div>
+    {/* Mobile menu */}
+    {menuOpen && (
+      <div className="absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-20 md:hidden">
+        <a href="#home" className="block px-4 py-2 text-lg font-semibold">
+          Home
+        </a>
+        <a href="#what" className="block px-4 py-2 text-lg font-semibold">
+          About Us
+        </a>
+        <a href="#features" className="block px-4 py-2 text-lg font-semibold">
+          Features
+        </a>
+      </div>
+    )}
+    {/* Tab Navigation for desktop */}
+    <div className="hidden md:flex space-x-16 justify center">
+      <a href="#home" className="text-lg font-semibold">
+        Home
+      </a>
+      <a href="#what" className="text-lg font-semibold">
+        About Us
+      </a>
+      <a href="#features" className="text-lg font-semibold">
+        Features
+      </a>
+    </div>
+    {/* Top-right controls for desktop */}
+    <div className="hidden md:flex items-center space-x-4">
+      <ModeToggle />
+      <a href="#signup">
+        <Button>Get Started</Button>
+      </a>
+    </div>
+  </nav>
 
       {/* Title content */}
       <div
@@ -131,18 +130,17 @@ export default function Home() {
   
         {/* What is Callia */}
 
-      <div
+ <div
   id="what"
-  className="flex flex-col md:flex-row items-center justify-center min-h-screen pt-20 md:pt-24 p-4 text-center"
+  className="flex flex-col md:flex-row items-center justify-center min-h-screen pt-20 md:pt-24 p-4 text-center bg-gray-100"
 >
-  {/* Left Column: AI Agent Image */}
-  <div className="flex-1 flex justify-center">
-    <img
-      src="/path-to-your-image/ai-agent.png" // Replace with the actual image path
-      alt="AI Agent"
-      className="max-w-xs md:max-w-sm object-contain"
-    />
-  </div>
+<div className="flex-1 flex justify-center">
+  <img
+    src="/wai.webp" // Replace with the actual image path
+    alt="AI Agent"
+    className="max-w-xs md:max-w-sm object-contain rounded-lg"  // Add rounded-lg for rounded corners
+  />
+</div>
 
   {/* Right Column: Content */}
   <div className="flex-1 flex flex-col items-start md:items-start text-left">
