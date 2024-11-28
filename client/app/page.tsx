@@ -308,9 +308,11 @@ export default function Home() {
     {/* Image Section */}
     <div className="text-center">
       <img
-        src="/images/images.png" // Replace with the actual image path
+        src="/partnership.webp" // Replace with the actual image path
         alt="Collaboration"
         className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+        width={50}
+        height={50}
       />
     </div>
   </div>
