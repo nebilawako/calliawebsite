@@ -24,89 +24,83 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   
 
-  return (
-    <div className="relative min-h-screen">
+return (
+<div className="relative min-h-screen">
       {/* Navigation */}
-  <nav className="fixed top-0 left-0 right-0 flex items-center justify-between p-1 bg-white dark:bg-gray-900 shadow-md z-10">
-    {/* Top-left logo and title */}
-    <div className="flex items-center space-x-2">
+      <nav className="fixed top-0 left-0 right-0 flex items-center justify-between py-4 px-6 bg-white dark:bg-gray-900 shadow-md z-10">
+  {/* Top-left logo and title */}
+  <div className="flex items-center space-x-2">
     <div className="flex justify-center items-center">
-        <Link href="/" aria-label="Homepage">
-          <Image
-            src="/logo.png"
-            alt="FlashFlorte logo"
-            width={50}   // Logo width
-            height={50}  // Logo height
-            priority
-          />
-        </Link>
-      </div>
-      <h1 className="text-6xl font-extrabold tracking-tight sm:text-xl">
-        Callia Innovations  {/* Reduced title font size */}
-      </h1>
+      {/* Placeholder for logo */}
     </div>
-    {/* Hamburger menu for mobile */}
-    <div className="md:hidden flex items-center space-x-4">
-      <button
-        className="text-gray-900 dark:text-gray-100 focus:outline-none"
-        aria-label="Toggle Menu"
-        onClick={() => setMenuOpen(!menuOpen)}
+    <h1 className="text-4xl sm:text-xl lg:text-3xl font-extrabold tracking-tight">
+      Callia Innovations
+    </h1>
+  </div>
+
+  {/* Hamburger menu for mobile */}
+  <div className="md:hidden flex items-center space-x-4">
+    <button
+      className="text-gray-900 dark:text-gray-100 focus:outline-none"
+      aria-label="Toggle Menu"
+      onClick={() => setMenuOpen(!menuOpen)}
+    >
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16m-7 6h7"
-          />
-        </svg>
-      </button>
-      {/* Mode Toggle for mobile */}
-      <ModeToggle />
-    </div>
-    {/* Mobile menu */}
-    {menuOpen && (
-      <div className="absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-20 md:hidden">
-        <a href="#home" className="block px-4 py-2 text-lg font-semibold">
-          Home
-        </a>
-        <a href="#what" className="block px-4 py-2 text-lg font-semibold">
-          About Us
-        </a>
-        <a href="#features" className="block px-4 py-2 text-lg font-semibold">
-          Features
-        </a>
-      </div>
-    )}
-    {/* Tab Navigation for desktop */}
-    <div className="hidden md:flex space-x-16 justify center">
-      <a href="#home" className="text-lg font-semibold">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        />
+      </svg>
+    </button>
+  </div>
+
+  {/* Mobile menu */}
+  {menuOpen && (
+    <div className="absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-20 md:hidden">
+      <a href="#home" className="block px-4 py-2 text-lg font-semibold">
         Home
       </a>
-      <a href="#what" className="text-lg font-semibold">
+      <a href="#what" className="block px-4 py-2 text-lg font-semibold">
         About Us
       </a>
-      <a href="#features" className="text-lg font-semibold">
+      <a href="#features" className="block px-4 py-2 text-lg font-semibold">
         Features
       </a>
     </div>
-    {/* Top-right controls for desktop */}
-    <div className="hidden md:flex items-center space-x-4">
-      <ModeToggle />
-      <a href="#signup">
-        <Button>Get Started</Button>
-      </a>
-    </div>
-  </nav>
+  )}
+
+  {/* Tab Navigation for desktop */}
+  <div className="hidden md:flex flex-1 justify-end items-center space-x-16">
+    <a href="#home" className="text-lg font-semibold">
+      Home
+    </a>
+    <a href="#what" className="text-lg font-semibold">
+      About Us
+    </a>
+    <a href="#features" className="text-lg font-semibold">
+      Features
+    </a>
+  </div>
+
+  {/* Top-right controls for desktop */}
+  <div className="hidden md:flex items-center space-x-4 ml-20">
+    <a href="#signup">
+      <Button>Get Started</Button>
+    </a>
+  </div>
+</nav>
+
 
       {/* Title content */}
-      <div
+    <div
   id="home"
   className="flex flex-col items-center justify-center min-h-screen pt-20 md:pt-24 p-4 text-center"
 >
@@ -126,49 +120,44 @@ export default function Home() {
     Get Started
   </button>
 </a>
-      <button className="px-6 py-3 text-blue-600 bg-transparent border border-blue-600 rounded-lg hover:bg-blue-100">
-        Contact Us
-      </button>
     </div>
   </div>
-</div>
-
-  
-        {/* What is Callia */}
-
- <div
+    </div>
+    {/* What is Callia */}
+    <div
   id="what"
-  className="flex flex-col md:flex-row items-center justify-center min-h-screen pt-20 md:pt-24 p-4 text-center bg-gray-100"
+  className="flex flex-col md:flex-row items-center justify-center min-h-screen pt-20 md:pt-24 p-4 text-center bg-gray-100 dark:bg-gray-900"
 >
-<div className="flex-1 flex justify-center">
-  <img
-    src="/wai.webp" // Replace with the actual image path
-    alt="AI Agent"
-    className="max-w-xs md:max-w-sm object-contain rounded-lg"  // Add rounded-lg for rounded corners
-  />
-</div>
+  {/* Left Column: Image */}
+  <div className="flex-1 flex justify-center">
+    <img
+      src="/wai.webp" // Replace with the actual image path
+      alt="AI Agent"
+      className="max-w-xs md:max-w-sm object-contain rounded-lg" // Add rounded-lg for rounded corners
+    />
+  </div>
 
   {/* Right Column: Content */}
   <div className="flex-1 flex flex-col items-start md:items-start text-left">
-    <h1 className="text-6xl font-extrabold tracking-tight lg:text-5xl mb-4">
+    <h1 className="text-6xl font-extrabold tracking-tight lg:text-5xl mb-4 text-gray-800 dark:text-white">
       What is Callia?
     </h1>
-    <p className="text-lg mb-8 max-w-2xl">
+    <p className="text-lg mb-8 max-w-2xl text-gray-700 dark:text-gray-300">
       Callia is an AI-powered phone agent that can...
     </p>
-    <ul className="list-disc list-inside mb-8">
+    <ul className="list-disc list-inside mb-8 text-gray-700 dark:text-gray-300">
       <li>Instantly answer common customer inquiries</li>
       <li>Seamlessly assist in scheduling and booking appointments</li>
       <li>Log detailed call information in real time for employee review</li>
     </ul>
-    <h1 className="text-xl font-bold">
+    <h1 className="text-xl font-bold text-gray-800 dark:text-white">
       Freeing your team from an extra workload to focus on what matters most.
     </h1>
   </div>
-      </div>
+    </div>
 
-
-<div
+    {/* Features */}
+    <div
   id="features"
   className="flex flex-col items-center min-h-screen p-4"
 >
@@ -284,9 +273,12 @@ export default function Home() {
       </p>
     </Card>
   </div>
-</div>
+    </div>
 
-<div id="signup" className="py-12 px-6">
+
+    
+    {/* Contact Us */}
+    <div id="signup" className="py-12 px-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto">
         {/* Content Section */}
         <div className="text-left space-y-4">
@@ -303,13 +295,13 @@ export default function Home() {
           <Dialog>
             <DialogTrigger asChild>
               <button className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md text-lg hover:bg-blue-800 transition-colors">
-                Business Sign-Up
+                Contact Us
               </button>
             </DialogTrigger>
 
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Business Sign-Up</DialogTitle>
+                <DialogTitle>Contact Us</DialogTitle>
                 <p>
                   Let us reach out and help onboard you to the platform.
                 </p>
@@ -320,18 +312,9 @@ export default function Home() {
                     htmlFor="firstName"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    First Name
+                    Business Name
                   </label>
-                  <Input id="firstName" type="text" placeholder="John" />
-                </div>
-                <div>
-                  <label
-                    htmlFor="lastName"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Last Name (optional)
-                  </label>
-                  <Input id="lastName" type="text" placeholder="Doe" />
+                  <Input id="businessName" type="text" placeholder="Callia" />
                 </div>
                 <div>
                   <label
@@ -347,44 +330,31 @@ export default function Home() {
                     required
                   />
                 </div>
-                <div>
+                {/* <div>
                   <label
-                    htmlFor="businessName"
+                    htmlFor="subject"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Business Name
+                    Subject
                   </label>
                   <Input
-                    id="businessName"
+                    id="subject"
                     type="text"
                     placeholder="Your Business"
                     required
                   />
-                </div>
+                </div> */}
                 <div>
                   <label
-                    htmlFor="phoneNumber"
+                    htmlFor="Message"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Phone Number (optional)
+                    Message
                   </label>
                   <Input
-                    id="phoneNumber"
+                    id="message"
                     type="text"
-                    placeholder="4031231234"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="websiteUrl"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Website URL (optional)
-                  </label>
-                  <Input
-                    id="websiteUrl"
-                    type="text"
-                    placeholder="www.callia.ca"
+                    placeholder="Input Text here"
                   />
                 </div>
               </form>
@@ -412,17 +382,16 @@ export default function Home() {
         </div>
       </div>
     </div>
-
-    
-
-      {/* Footer */}
-      <footer className="mt-16 px-4 py-8 bg-slate-100 dark:bg-gray-800">
+    {/* Footer */}
+    <footer className="mt-16 px-4 py-8 bg-slate-100 dark:bg-gray-800">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-gray-600 dark:text-gray-400">
             © 2024 Callia. All rights reserved.
           </p>
         </div>
-      </footer>
-    </div>
+    </footer>
+
+
+</div>
   );
 }
