@@ -123,29 +123,28 @@ return (
     </div>
   </div>
     </div>
-    {/* What is Callia */}
     <div
   id="what"
-  className="flex flex-col md:flex-row items-center justify-center min-h-screen pt-20 md:pt-24 p-4 text-center bg-gray-100 dark:bg-gray-900"
+  className="flex flex-col md:flex-row items-center justify-center h-auto pt-10 md:pt-16 p-4 text-center bg-gray-100 dark:bg-gray-900"
 >
   {/* Left Column: Image */}
   <div className="flex-1 flex justify-center">
     <img
       src="/wai.webp" // Replace with the actual image path
       alt="AI Agent"
-      className="max-w-xs md:max-w-sm object-contain rounded-lg" // Add rounded-lg for rounded corners
+      className="max-w-xs md:max-w-md object-contain rounded-lg" // Adjusted max width for smaller image
     />
   </div>
 
   {/* Right Column: Content */}
   <div className="flex-1 flex flex-col items-start md:items-start text-left">
-    <h1 className="text-6xl font-extrabold tracking-tight lg:text-5xl mb-4 text-gray-800 dark:text-white">
+    <h1 className="text-4xl sm:text-5xl md:text-5xl font-extrabold tracking-tight mb-6 mt-4 text-gray-800 dark:text-white">
       What is Callia?
     </h1>
-    <p className="text-lg mb-8 max-w-2xl text-gray-700 dark:text-gray-300">
+    <p className="text-lg mb-8 max-w-xl text-gray-700 dark:text-gray-300">
       Callia is an AI-powered phone agent that can...
     </p>
-    <ul className="list-disc list-inside mb-8 text-gray-700 dark:text-gray-300">
+    <ul className="list-disc list-inside mb-6 text-gray-700 dark:text-gray-300">
       <li>Instantly answer common customer inquiries</li>
       <li>Seamlessly assist in scheduling and booking appointments</li>
       <li>Log detailed call information in real time for employee review</li>
@@ -154,7 +153,9 @@ return (
       Freeing your team from an extra workload to focus on what matters most.
     </h1>
   </div>
-    </div>
+</div>
+
+
 
 {/* Features */}
 <div
