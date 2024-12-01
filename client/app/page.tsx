@@ -16,13 +16,22 @@ import { Input } from "@/components/ui/input"
 import { redirect } from "next/navigation";
 import { Card } from "@/components/ui/card";
 import { ThemeProvider } from "@/components/theme-provider"
+import Particles from "react-tsparticles";
 
 //--------------------------
 
 export default function Home() {
   // State for controlling mobile menu open/close
   const [menuOpen, setMenuOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    businessName: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
   
+
+
 
 return (
 <div className="relative min-h-screen">
@@ -65,28 +74,52 @@ return (
   {/* Mobile menu */}
   {menuOpen && (
     <div className="absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-20 md:hidden">
-      <a href="#home" className="block px-4 py-2 text-lg font-semibold">
+      <a
+        href="#home"
+        className="block px-4 py-2 text-lg font-semibold"
+        onClick={() => setMenuOpen(false)} // Close menu on click
+      >
         Home
       </a>
-      <a href="#what" className="block px-4 py-2 text-lg font-semibold">
+      <a
+        href="#what"
+        className="block px-4 py-2 text-lg font-semibold"
+        onClick={() => setMenuOpen(false)} // Close menu on click
+      >
         About Us
       </a>
-      <a href="#features" className="block px-4 py-2 text-lg font-semibold">
+      <a
+        href="#features"
+        className="block px-4 py-2 text-lg font-semibold"
+        onClick={() => setMenuOpen(false)} // Close menu on click
+      >
         Features
+      </a>
+
+      {/* "Get Started" button in mobile version */}
+      <a 
+        href="#signup" 
+        className="block px-4 py-2 text-lg font-semibold mt-4" 
+        onClick={() => setMenuOpen(false)} // Close menu on click
+      >
+        <Button>Get Started</Button>
       </a>
     </div>
   )}
 
   {/* Tab Navigation for desktop */}
   <div className="hidden md:flex flex-1 justify-end items-center space-x-16">
-    <a href="#home" className="text-lg font-semibold">
+    <a href="#home" className="relative text-lg font-semibold hover:text-blue-500">
       Home
+      <span className="absolute bottom-0 left-0 right-0 h-1 bg-blue-500 transform scale-x-0 transition-all duration-300 ease-out group-hover:scale-x-100"></span>
     </a>
-    <a href="#what" className="text-lg font-semibold">
+    <a href="#what" className="relative text-lg font-semibold hover:text-blue-500">
       About Us
+      <span className="absolute bottom-0 left-0 right-0 h-1 bg-blue-500 transform scale-x-0 transition-all duration-300 ease-out group-hover:scale-x-100"></span>
     </a>
-    <a href="#features" className="text-lg font-semibold">
+    <a href="#features" className="relative text-lg font-semibold hover:text-blue-500">
       Features
+      <span className="absolute bottom-0 left-0 right-0 h-1 bg-blue-500 transform scale-x-0 transition-all duration-300 ease-out group-hover:scale-x-100"></span>
     </a>
   </div>
 
@@ -97,6 +130,9 @@ return (
     </a>
   </div>
 </nav>
+
+
+
 
 
       {/* Title content */}
@@ -324,20 +360,6 @@ return (
                     required
                   />
                 </div>
-                {/* <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Subject
-                  </label>
-                  <Input
-                    id="subject"
-                    type="text"
-                    placeholder="Your Business"
-                    required
-                  />
-                </div> */}
                 <div>
                   <label
                     htmlFor="Message"
@@ -376,6 +398,9 @@ return (
         </div>
       </div>
     </div>
+
+
+
     {/* Footer */}
     <footer className="mt-16 px-4 py-8 bg-slate-100 dark:bg-gray-800">
         <div className="max-w-4xl mx-auto text-center">
