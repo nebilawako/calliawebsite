@@ -16,12 +16,6 @@ import {
 import { Input } from "@/components/ui/input"
 import { redirect } from "next/navigation";
 import { Card } from "@/components/ui/card";
-// import { ThemeProvider } from "@/components/theme-provider"
-// import Particles from "react-tsparticles";
-// import { loadFull } from "tsparticles"; 
-// import { useCallback } from "react";
-// import { Engine } from '@tsparticles/engine';
-// import Container from 'react-tsparticles';
 
 
 export default function Home() {
@@ -270,7 +264,7 @@ return (
 >
   {/* Left Column: Image */}
   <div className="flex-1 flex justify-center">
-    <img
+    <Image
       src="/wai.webp" // Replace with the actual image path
       alt="AI Agent"
       className="max-w-xs md:max-w-md object-contain rounded-lg" // Adjusted max width for smaller image
@@ -488,7 +482,7 @@ return (
 
         {/* Image Section */}
         <div className="text-center">
-          <img
+          <Image
             src="/partnership.webp"
             alt="Collaboration"
             className="w-full max-w-md mx-auto rounded-lg shadow-lg"
