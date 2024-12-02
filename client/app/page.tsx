@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import emailjs from "emailjs-com";
 import {
   Dialog,
   DialogContent,
@@ -28,13 +29,45 @@ export default function Home() {
     email: "",
     message: "",
   });
+
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // Handle form input changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  // Handle form submission using EmailJS
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const serviceID = "service_95crq0a";
+    const templateID = "template_ppr7six";
+    const userID = "ak5ehggv3TGlxA_JB";
+
+    emailjs
+      .send(serviceID, templateID, formData, userID)
+      .then(() => {
+        setIsSubmitted(true);
+        alert("Message sent successfully!");
+        setFormData({ businessName: "", email: "", message: "" });
+      })
+      .catch((error) => {
+        console.error("Error sending message:", error);
+        alert("Failed to send message. Please try again.");
+      });
+  };
+
   
-
-
-
+  
 return (
 <div className="relative min-h-screen">
+  
+
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 flex items-center justify-between py-4 px-6 bg-white dark:bg-gray-900 shadow-md z-10">
   {/* Top-left logo and title */}
@@ -301,8 +334,8 @@ return (
       </div>
     </div>
 
-    {/* Contact Us */}
-    <div id="signup" className="py-12 px-6">
+{/* Contact Us */}
+<div id="signup" className="py-12 px-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto">
         {/* Content Section */}
         <div className="text-left space-y-4">
@@ -326,25 +359,23 @@ return (
             <DialogContent>
               <DialogHeader>
                 <DialogTitle>Contact Us</DialogTitle>
-                <p>
-                  Let us reach out and help onboard you to the platform.
-                </p>
+                <p>Let us reach out and help onboard you to the platform.</p>
               </DialogHeader>
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label
-                    htmlFor="firstName"
-                    className="block text-sm font-medium text-gray-700"
-                  >
+                  <label htmlFor="businessName" className="block text-sm font-medium text-gray-700">
                     Business Name
                   </label>
-                  <Input id="businessName" type="text" placeholder="Callia" />
+                  <Input
+                    id="businessName"
+                    type="text"
+                    placeholder="Callia"
+                    value={formData.businessName}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700"
-                  >
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                     Email
                   </label>
                   <Input
@@ -352,30 +383,31 @@ return (
                     type="email"
                     placeholder="example@example.com"
                     required
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="Message"
-                    className="block text-sm font-medium text-gray-700"
-                  >
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">
                     Message
                   </label>
-                  <Input
+                  <textarea
                     id="message"
-                    type="text"
                     placeholder="Input Text here"
+                    className="w-full h-40 p-4 border border-gray-300 rounded-lg text-gray-700 resize-y focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    value={formData.message}
+                    onChange={handleChange}
                   />
                 </div>
+                <DialogFooter>
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded"
+                  >
+                    Submit
+                  </button>
+                </DialogFooter>
               </form>
-              <DialogFooter>
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded"
-                >
-                  Submit
-                </button>
-              </DialogFooter>
             </DialogContent>
           </Dialog>
         </div>
@@ -383,7 +415,7 @@ return (
         {/* Image Section */}
         <div className="text-center">
           <img
-            src="/partnership.webp" // Replace with the actual image path
+            src="/partnership.webp"
             alt="Collaboration"
             className="w-full max-w-md mx-auto rounded-lg shadow-lg"
             width={50}
@@ -392,7 +424,6 @@ return (
         </div>
       </div>
     </div>
-
 
 {/* Footer */}
 <footer className="mt-16 px-4 py-8 bg-slate-100 dark:bg-gray-800">
