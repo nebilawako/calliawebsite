@@ -18,8 +18,11 @@ import { redirect } from "next/navigation";
 import { Card } from "@/components/ui/card";
 import { ThemeProvider } from "@/components/theme-provider"
 import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles"; 
+import { useCallback } from "react";
+import { Engine } from '@tsparticles/engine';
+import Container from 'react-tsparticles';
 
-//--------------------------
 
 export default function Home() {
   // State for controlling mobile menu open/close
@@ -61,12 +64,21 @@ export default function Home() {
         alert("Failed to send message. Please try again.");
       });
   };
+  const particlesInit = useCallback(async (engine: Engine) => {
+    console.log("Initializing particles engine");
+    await loadFull(engine);
+}, []);
+
+const particlesLoaded = useCallback(async (container: Container | undefined) => {
+    await console.log(container);
+}, []);
 
   
   
 return (
 <div className="relative min-h-screen">
   
+
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 flex items-center justify-between py-4 px-6 bg-white dark:bg-gray-900 shadow-md z-10">
@@ -165,11 +177,68 @@ return (
 </nav>
 
 
+
       {/* Title content */}
-    <div
-  id="home"
+<div id="home"
   className="flex flex-col items-center justify-center min-h-screen pt-20 md:pt-24 p-4 text-center"
 >
+{/* <Particles
+          id="tsparticles"
+          init={particlesInit}
+          loaded={particlesLoaded}
+          options={{
+            background: {
+              color: { value: "#ffffff" }, // Background color for particles
+            },
+            fpsLimit: 120,
+            particles: {
+              color: { value: "#0d47a1" }, // Particle color
+              size: { value: { min: 1, max: 5 } },
+              move: { enable: true, speed: 6 },
+              links: { color: "#0d47a1", enable: true, distance: 150 },
+              number: { value: 80 },
+              opacity: { value: 0.5 },
+              shape: { type: "circle" },
+            },
+            interactivity: {
+              events: {
+                onClick: { enable: true, mode: "push" },
+                onHover: { enable: true, mode: "repulse" },
+              },
+            },
+          }}
+          className="absolute top-0 left-0 w-full h-full z-0" // Particles background
+        /> */}
+
+  {/* <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      loaded={particlesLoaded}
+      options={{
+        background: {
+          color: { value: "#ffffff" },
+        },
+        particles: {
+          color: { value: "#0d47a1" },
+          size: { value: { min: 1, max: 5 } },
+          move: { enable: true, speed: 6 },
+          links: { color: "#0d47a1", enable: true, distance: 150 },
+          number: { value: 80 },
+          opacity: { value: 0.5 },
+          shape: { type: "circle" },
+        },
+        interactivity: {
+          events: {
+            onClick: { enable: true, mode: "push" },
+            onHover: { enable: true, mode: "repulse" },
+          },
+        },
+      }}
+      className="w-full h-full"
+    />
+  </div> */}
+
   <div className="flex flex-col items-center justify-center">
     <h1 className="text-3xl font-extrabold tracking-tight lg:text-7xl md:text-5xl mb-4">
       Do your thing,
@@ -189,6 +258,10 @@ return (
     </div>
   </div>
     </div>
+    
+
+
+
     {/* What is calliax */}
     <div
   id="what"
