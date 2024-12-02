@@ -16,12 +16,12 @@ import {
 import { Input } from "@/components/ui/input"
 import { redirect } from "next/navigation";
 import { Card } from "@/components/ui/card";
-import { ThemeProvider } from "@/components/theme-provider"
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles"; 
-import { useCallback } from "react";
-import { Engine } from '@tsparticles/engine';
-import Container from 'react-tsparticles';
+// import { ThemeProvider } from "@/components/theme-provider"
+// import Particles from "react-tsparticles";
+// import { loadFull } from "tsparticles"; 
+// import { useCallback } from "react";
+// import { Engine } from '@tsparticles/engine';
+// import Container from 'react-tsparticles';
 
 
 export default function Home() {
@@ -64,14 +64,14 @@ export default function Home() {
         alert("Failed to send message. Please try again.");
       });
   };
-  const particlesInit = useCallback(async (engine: Engine) => {
-    console.log("Initializing particles engine");
-    await loadFull(engine);
-}, []);
+//   const particlesInit = useCallback(async (engine: Engine) => {
+//     console.log("Initializing particles engine");
+//     await loadFull(engine);
+// }, []);
 
-const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    await console.log(container);
-}, []);
+// const particlesLoaded = useCallback(async (container: Container | undefined) => {
+//     await console.log(container);
+// }, []);
 
   
   
@@ -238,6 +238,7 @@ return (
       className="w-full h-full"
     />
   </div> */}
+  
 
   <div className="flex flex-col items-center justify-center">
     <h1 className="text-3xl font-extrabold tracking-tight lg:text-7xl md:text-5xl mb-4">
