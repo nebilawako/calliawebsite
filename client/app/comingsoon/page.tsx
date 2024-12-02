@@ -9,7 +9,7 @@ const ComingSoon = () => {
         Coming Soon!
       </h1>
       <p className="text-lg text-gray-600 dark:text-gray-400 mt-4">
-        We're working hard to bring this page to you. Stay tuned!
+        We are working hard to bring this page to you. Stay tuned!
       </p>
       <Link href="/" passHref>
         <Button className="mt-8">Back to Home</Button>
