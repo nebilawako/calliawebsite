@@ -483,13 +483,13 @@ return (
 
         {/* Image Section */}
         <div className="text-center">
-          <Image
-            src="/partnership.webp"
-            alt="Collaboration"
-            className="w-full max-w-md mx-auto rounded-lg shadow-lg"
-            width={50}
-            height={50}
-          />
+        <Image
+          src="/partnership.jpg"
+          alt="Collaboration"
+          className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+          width={768} // Match the container's max width
+          height={768} // Maintain aspect ratio if applicable
+        />
         </div>
       </div>
     </div>
