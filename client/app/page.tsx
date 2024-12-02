@@ -266,6 +266,8 @@ return (
   <div className="flex-1 flex justify-center">
     <Image
       src="/wai.webp" // Replace with the actual image path
+      width={500}
+      height={500}
       alt="AI Agent"
       className="max-w-xs md:max-w-md object-contain rounded-lg" // Adjusted max width for smaller image
     />
