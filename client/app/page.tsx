@@ -75,7 +75,7 @@ return (
 
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 flex items-center justify-between py-4 px-6 bg-white dark:bg-gray-900 shadow-md z-10">
+      <nav className="fixed top-0 left-0 right-0 flex items-center justify-between py-4 px-6 bg-white shadow-md z-10">
   {/* Top-left logo and title */}
   <div className="flex items-center space-x-2">
     <div className="flex justify-center items-center">
@@ -89,7 +89,7 @@ return (
   {/* Hamburger menu for mobile */}
   <div className="md:hidden flex items-center space-x-4">
     <button
-      className="text-gray-900 dark:text-gray-100 focus:outline-none"
+      className="text-gray-900 focus:outline-none"
       aria-label="Toggle Menu"
       onClick={() => setMenuOpen(!menuOpen)}
     >
@@ -112,7 +112,7 @@ return (
 
   {/* Mobile menu */}
   {menuOpen && (
-    <div className="absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-20 md:hidden">
+    <div className="absolute top-full left-0 w-full bg-white shadow-lg z-20 md:hidden">
       <a
         href="#home"
         className="block px-4 py-2 text-lg font-semibold"
@@ -260,7 +260,7 @@ return (
     {/* What is calliax */}
     <div
   id="what"
-  className="flex flex-col md:flex-row items-center justify-center h-auto pt-10 md:pt-16 p-4 text-center bg-gray-100 dark:bg-gray-900"
+  className="flex flex-col md:flex-row items-center justify-center h-auto pt-10 md:pt-16 p-4 text-center bg-gray-100"
 >
   {/* Left Column: Image */}
   <div className="flex-1 flex justify-center">
@@ -275,18 +275,18 @@ return (
 
   {/* Right Column: Content */}
   <div className="flex-1 flex flex-col items-start md:items-start text-left">
-    <h1 className="text-4xl sm:text-5xl md:text-5xl font-extrabold tracking-tight mb-6 mt-4 text-gray-800 dark:text-white">
+    <h1 className="text-4xl sm:text-5xl md:text-5xl font-extrabold tracking-tight mb-6 mt-4 text-gray-800">
       What is Callia?
     </h1>
-    <p className="text-lg mb-8 max-w-xl text-gray-700 dark:text-gray-300">
+    <p className="text-lg mb-8 max-w-xl text-gray-700">
       Callia is an AI-powered phone agent that can...
     </p>
-    <ul className="list-disc list-inside mb-6 text-gray-700 dark:text-gray-300">
+    <ul className="list-disc list-inside mb-6 text-gray-700">
       <li>Instantly answer common customer inquiries</li>
       <li>Seamlessly assist in scheduling and booking appointments</li>
       <li>Log detailed call information in real time for employee review</li>
     </ul>
-    <h1 className="text-xl font-bold text-gray-800 dark:text-white">
+    <h1 className="text-xl font-bold text-gray-800">
       Freeing your team from an extra workload to focus on what matters most.
     </h1>
   </div>
@@ -322,10 +322,10 @@ return (
             <path d="M4 4h16v16H4z" />
             <path d="M8 4v16M16 4v16" />
           </svg>
-          <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
+          <h3 className="text-lg font-semibold mb-2 text-gray-900">
             The Problem
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-300 text-justify break-words">
+          <p className="text-sm text-gray-600 text-justify break-words">
             Businesses often face significant challenges, including high call volumes and missed calls when their employees become too busy to tend to the phone.
           </p>
         </Card>
@@ -346,10 +346,10 @@ return (
             <path d="M4 6h16v12H4z" />
             <path d="M12 6v12M8 12h8" />
           </svg>
-          <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
+          <h3 className="text-lg font-semibold mb-2 text-gray-900">
             Studies show
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-300 text-justify break-words">
+          <p className="text-sm text-gray-600 text-justify break-words">
             Up to 60% of potential customers hang up the phone due to long hold times and difficulty of having their calls answered, translating to lost business.
           </p>
         </Card>
@@ -370,10 +370,10 @@ return (
             <path d="M12 2L2 7l10 5 10-5-10-5z" />
             <path d="M12 22l10-5V7L12 2 2 7v10l10 5z" />
           </svg>
-          <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
+          <h3 className="text-lg font-semibold mb-2 text-gray-900">
             Our Solution
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-300 text-justify break-words">
+          <p className="text-sm text-gray-600 text-justify break-words">
             An AI-agent, Callia, that can handle incoming calls, ensuring that your workers can focus on in-person duties.
           </p>
         </Card>
@@ -394,10 +394,10 @@ return (
             <path d="M4 4h16v16H4z" />
             <path d="M8 4v16M16 4v16" />
           </svg>
-          <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
+          <h3 className="text-lg font-semibold mb-2 text-gray-900">
             The End Result
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-300 text-justify break-words">
+          <p className="text-sm text-gray-600 text-justify break-words">
             Upon implementation, Callia could streamline communication processes, reduce staff burden, and improve operational efficiency and client satisfaction.
           </p>
         </Card>
@@ -496,14 +496,14 @@ return (
     </div>
 
 {/* Footer */}
-<footer className="mt-16 px-4 py-8 bg-slate-100 dark:bg-gray-800">
+<footer className="mt-16 px-4 py-8 bg-slate-100">
   <div className="max-w-4xl mx-auto text-center">
-    <p className="text-gray-600 dark:text-gray-400">
+    <p className="text-gray-600">
       © 2024 Callia. All rights reserved.
     </p>
 
     {/* Footer links */}
-    <div className="mt-4 text-gray-600 dark:text-gray-400">
+    <div className="mt-4 text-gray-600">
       <Link href="/comingsoon" className="hover:text-blue-500 dark:hover:text-blue-400 mr-4">
         Terms and Conditions
       </Link>
